@@ -36,6 +36,11 @@ fun main() {
             }
         }
         div {
+            css {
+                position = Position.absolute
+                top = 10.px
+                right = 10.px
+            }
             h3 {
                 +"John Doe: Building and breaking things"
             }
