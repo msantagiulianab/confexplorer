@@ -15,6 +15,8 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.img
 
 val App = FC<Props> {
+    var currentVideo: Video? by useState(null)
+    
     h1 {
         +"KotlinConf Explorer"
     }
