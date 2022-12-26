@@ -1,14 +1,12 @@
-import kotlinx.browser.window
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML
 import react.dom.html.ReactHTML.p
 import react.key
-import react.useState
 
 external interface VideoListProps : Props {
     var videos: List<Video>
     var selectedVideo: Video?
+    var onSelectedVideo: (Video) -> Unit
 }
 
 val VideoList = FC<VideoListProps> { props ->
@@ -16,7 +14,7 @@ val VideoList = FC<VideoListProps> { props ->
         p {
             key = video.id.toString()
             onClick = {
-                props.selectedVideo = video
+                props.onSelectedVideo(video)
             }
             if (video == props.selectedVideo) {
                 +"▶ "

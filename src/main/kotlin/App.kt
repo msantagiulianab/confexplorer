@@ -1,22 +1,17 @@
-import kotlinx.coroutines.async
-import react.*
-import react.dom.*
-import kotlinx.browser.window
-import kotlinx.coroutines.*
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
-import emotion.react.css
 import csstype.Position
 import csstype.px
+import emotion.react.css
+import react.FC
+import react.Props
+import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.div
-import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.img
+import react.useState
 
 val App = FC<Props> {
     var currentVideo: Video? by useState(null)
-    
+
     h1 {
         +"KotlinConf Explorer"
     }
@@ -26,12 +21,20 @@ val App = FC<Props> {
         }
         VideoList {
             videos = unwatchedVideos
+            selectedVideo = currentVideo
+            onSelectedVideo = { video ->
+                currentVideo = video
+            }
         }
         h3 {
             +"Videos watched"
         }
         VideoList {
             videos = watchedVideos
+            selectedVideo = currentVideo
+            onSelectedVideo = { video ->
+                currentVideo = video
+            }
         }
     }
     div {
