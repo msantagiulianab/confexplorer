@@ -38,13 +38,10 @@ val App = FC<Props> {
         }
     }
     div {
-        css {
-            position = Position.absolute
-            top = 10.px
-            right = 10.px
-        }
-        h3 {
-            +"John Doe: Building and breaking things"
+        currentVideo?.let { curr ->
+            VideoPlayer {
+                video = curr
+            }
         }
         img {
             src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
