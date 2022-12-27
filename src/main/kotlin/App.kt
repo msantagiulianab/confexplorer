@@ -1,12 +1,8 @@
-import csstype.Position
-import csstype.px
-import emotion.react.css
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.img
 import react.useState
 
 val App = FC<Props> {
@@ -64,9 +60,6 @@ val App = FC<Props> {
                     }
                 }
             }
-        }
-        img {
-            src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
         }
     }
 }

@@ -8,7 +8,6 @@ import react.Props
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.img
 
 external interface VideoPlayerProps : Props {
     var video: Video
@@ -40,8 +39,9 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
                 +"Mark as unwatched"
             }
         }
-        img {
-            src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
+        ReactPlayer {
+            url = props.video.videoUrl
+            controls = true
         }
     }
 }
